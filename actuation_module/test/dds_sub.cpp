@@ -64,7 +64,9 @@ int main(void) {
     log_info("Starting DDS subscriber\n");
     log_info("--------------------------------\n");
     log_info("Waiting for DHCP to get IP address...\n");
-    sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
+    #ifdef CONFIG_ENABLE_SNTP
+        sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
+    #endif
 
 #ifdef CONFIG_ENABLE_SNTP
     if (Clock::init_clock_via_sntp() < 0) {

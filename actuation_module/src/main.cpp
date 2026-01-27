@@ -12,10 +12,12 @@ int main(void)
     autoware::motion::control::trajectory_follower_node::Controller* controller;
     
     log_success("-----------------------------------------");
-    log_success("ARM - Autoware: Actuation Safety Island");
+    log_success("ARM - Autoware: Actuation Safety Island -- Borra");
     log_success("-----------------------------------------");
-    log_info("Waiting for DHCP to get IP address...");
-    sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
+    log_info("Waiting for TCP to get IP address...");
+    #ifdef CONFIG_ENABLE_SNTP
+        sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
+    #endif
 
     // TODO: Disable SNTP if no internet connection is available
 #ifdef CONFIG_ENABLE_SNTP
