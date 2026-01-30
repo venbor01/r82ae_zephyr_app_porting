@@ -3,6 +3,7 @@
 
 #include "common/clock/clock.hpp"
 #include "common/logger/logger.hpp"
+#include "common/dds/network_config.hpp"
 using namespace common::logger;
 
 #include "autoware/trajectory_follower_node/controller_node.hpp"
