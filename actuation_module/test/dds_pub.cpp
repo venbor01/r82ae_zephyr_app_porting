@@ -1,6 +1,7 @@
 #include "common/node/node.hpp"
 #include "common/clock/clock.hpp"
 #include "common/logger/logger.hpp"
+#include "common/dds/network_config.hpp"
 using namespace common::logger;
 
 // Msgs
@@ -28,7 +29,8 @@ int main(void) {
     log_info("--------------------------------\n");
     log_info("Starting DDS publisher\n");
     log_info("--------------------------------\n");
-    log_info("Waiting for DHCP to get IP address...\n");
+    log_info("Waiting for TCP to get IP address...\n");
+    configure_network();
     #ifdef CONFIG_NET_DHCPV4
         sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
     #endif

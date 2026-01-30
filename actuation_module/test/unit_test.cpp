@@ -8,6 +8,7 @@
 #include "common/node/node.hpp"
 #include "common/clock/clock.hpp"
 #include "common/logger/logger.hpp"
+#include "common/dds/network_config.hpp"
 using namespace common::logger;
 
 // Msgs
@@ -223,6 +224,7 @@ static K_THREAD_STACK_DEFINE(node_stack, CONFIG_THREAD_STACK_SIZE);
 int main() {
     log_info("=== Starting Node Test Suite ===\n");
     log_info("Waiting for Network interface to be ready\n");
+    configure_network();
     #ifdef CONFIG_NET_DHCPV4
         sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
     #endif
