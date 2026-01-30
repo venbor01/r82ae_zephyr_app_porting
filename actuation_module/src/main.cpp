@@ -15,7 +15,8 @@ int main(void)
     log_success("ARM - Autoware: Actuation Safety Island -- Borra");
     log_success("-----------------------------------------");
     log_info("Waiting for TCP to get IP address...");
-    #ifdef CONFIG_ENABLE_SNTP
+    configure_network();
+    #ifdef CONFIG_NET_DHCPV4
         sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
     #endif
 

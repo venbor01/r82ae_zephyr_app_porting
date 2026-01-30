@@ -223,7 +223,7 @@ static K_THREAD_STACK_DEFINE(node_stack, CONFIG_THREAD_STACK_SIZE);
 int main() {
     log_info("=== Starting Node Test Suite ===\n");
     log_info("Waiting for Network interface to be ready\n");
-    #ifdef CONFIG_ENABLE_SNTP
+    #ifdef CONFIG_NET_DHCPV4
         sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
     #endif
 

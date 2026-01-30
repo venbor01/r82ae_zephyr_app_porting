@@ -29,7 +29,7 @@ int main(void) {
     log_info("Starting DDS publisher\n");
     log_info("--------------------------------\n");
     log_info("Waiting for DHCP to get IP address...\n");
-    #ifdef CONFIG_ENABLE_SNTP
+    #ifdef CONFIG_NET_DHCPV4
         sleep(CONFIG_NET_DHCPV4_INITIAL_DELAY_MAX);
     #endif
 
