@@ -13,7 +13,7 @@ int main(void)
     autoware::motion::control::trajectory_follower_node::Controller* controller;
     
     log_success("-----------------------------------------");
-    log_success("ARM - Autoware: Actuation Safety Island -- Borra");
+    log_success("ARM - Autoware: Actuation Safety Island");
     log_success("-----------------------------------------");
     log_info("Waiting for TCP to get IP address...");
     configure_network();
